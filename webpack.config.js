@@ -22,7 +22,7 @@ module.exports = (env) => {
     mode: environment,
     entry: './client/index.js',
     output: {
-      path: path.resolve(__dirname, 'public'),
+      path: path.resolve(__dirname, 'docs'),
       filename: 'app.' + environment + '.bundle.js'
     },
     devServer: {

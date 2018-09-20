@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types'
 import styles from './UserForm.css'
 
 class UserForm extends Component {
@@ -8,16 +8,16 @@ class UserForm extends Component {
     this.state = { name: '' }
   }
 
-  handleSubmit (e) {
+  handleSubmit = (e) => {
     e.preventDefault()
     this.props.onUserSubmit(this.state.name)
   }
 
-  handleChange (e) {
+  handleChange = (e) => {
     this.setState({ name: e.target.value })
   }
 
-  render () {
+  render = () => {
     return (
       <form className={styles.UserForm} onSubmit={e => this.handleSubmit(e)}>
         <input
@@ -29,6 +29,10 @@ class UserForm extends Component {
       </form>
     )
   }
+}
+
+UserForm.propTypes = {
+  onUserSubmit: PropTypes.func
 }
 
 export default UserForm

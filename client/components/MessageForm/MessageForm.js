@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import styles from './MessageForm.css'
 
 class MessageForm extends Component {
@@ -7,7 +8,7 @@ class MessageForm extends Component {
     this.state = { text: '' }
   }
 
-  handleSubmit (e) {
+  handleSubmit = (e) => {
     e.preventDefault()
     const message = {
       from: this.props.name,
@@ -17,11 +18,11 @@ class MessageForm extends Component {
     this.setState({ text: '' })
   }
 
-  changeHandler (e) {
+  changeHandler = (e) => {
     this.setState({ text: e.target.value })
   }
 
-  render () {
+  render = () => {
     return (
       <form className={styles.MessageForm} onSubmit={e => this.handleSubmit(e)}>
         <input
@@ -33,6 +34,11 @@ class MessageForm extends Component {
       </form>
     )
   }
+}
+
+MessageForm.propTypes = {
+  onMessageSubmit: PropTypes.func,
+  name: PropTypes.string
 }
 
 export default MessageForm

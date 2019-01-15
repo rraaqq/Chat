@@ -1,3 +1,3 @@
-# czat
+# Chat
 
-https://rraaqq.github.io/czat/
+https://rraaqq.github.io/Chat/
